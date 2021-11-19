@@ -129,5 +129,5 @@ dmypy.json
 .pyre/
 
 src/dataSet/
-.idea
+.idea/
 src/Recogniser/trainingDataEigan.xml
