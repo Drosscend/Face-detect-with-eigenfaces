@@ -11,10 +11,10 @@ glass_cas = cv2.CascadeClassifier('../Haar/haarcascade_eye_tree_eyeglasses.xml')
 WHITE = [255, 255, 255]
 
 
-def FileRead():
-    Info = open("../Names.txt", "r")  # Open th text file in readmode
+def fileread():
+    Info = open("Names.txt", "r")  # Open th text file in readmode
     NAME = []  # The tuple to store Names
-    while (True):  # Read all the lines in the file and store them in two tuples
+    while True:  # Read all the lines in the file and store them in two tuples
         Line = Info.readline()
         if Line == '':
             break
@@ -23,7 +23,7 @@ def FileRead():
     return NAME  # Return the two tuples
 
 
-Names = FileRead()  # Run the above Function to get the ID and Names Tuple
+Names = fileread()  # Run the above Function to get the ID and Names Tuple
 
 
 #     ------------------- FUNCTION TO FIND THE NAME  -----------------------------------------------------------
@@ -33,9 +33,9 @@ def file_is_empty(path):
     return os.stat(path).st_size == 0
 
 
-with open('../Names.txt') as f:
+with open('Names.txt') as f:
     lines = f.readlines()
-    if file_is_empty('../Names.txt'):
+    if file_is_empty('Names.txt'):
         last_string = 1
     else:
         last_row = lines[-1]
@@ -61,7 +61,7 @@ def ID2Name(ID, conf):
 
 def AddName():
     Name = input('Enter Your Name ')
-    Info = open("../Names.txt", "r+")
+    Info = open("Names.txt", "r+")
     ID = ((sum(1 for line in Info)) + 1)
     Info.write(str(ID) + " " + "," + " " + Name + "\n")
     print("Name Stored in " + str(ID))

@@ -15,8 +15,8 @@ recognise.read("../Recogniser/trainingDataEigan.xml")  # Load the training data
 
 
 def init():
-    # -------------------------     START THE VIDEO FEED ------------------------------------------
-    cap = cv2.VideoCapture(1)  # Camera object
+    # --------------pip install opencv-contrib-python-----------     START THE VIDEO FEED ------------------------------------------
+    cap = cv2.VideoCapture(0)  # Camera object
     # cap = cv2.VideoCapture('TestVid.wmv')   # Video object
     ID = 0
     while True:

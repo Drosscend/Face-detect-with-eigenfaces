@@ -33,7 +33,7 @@ def init():
     print('TRAINING......')
     EigenFace.train(FaceList, IDs)  # The recongniser is trained using the images
     print('EIGEN FACE RECOGNISER COMPLETE...')
-    EigenFace.save('Recogniser/trainingDataEigan.xml')
+    EigenFace.save('../Recogniser/trainingDataEigan.xml')
     print('FILE SAVED..')
     print('ALL XML FILES SAVED...')
 

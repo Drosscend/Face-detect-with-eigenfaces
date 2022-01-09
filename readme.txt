@@ -17,3 +17,7 @@ Recogniser_Video_EigenFace.py : Ce fichier va reconnaître les visages à partir
 dataSet --> Contains the images that will be used to train the recogniser.
 Haar --> Contains Haar Cascades of OpenCV used in the applications
 Recogniser --> Contains the saved XML files by reconisers
+
+------------------Librairies -----------
+pip install opencv-contrib-python
+pip install opencv-python

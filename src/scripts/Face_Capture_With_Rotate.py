@@ -4,7 +4,7 @@
 
 import cv2  # Importing the opencv
 import numpy as np  # Import Numarical Python
-import NameFind  # Import NameFind function
+import NameFind
 
 
 def capture(cap):
@@ -32,15 +32,13 @@ def capture(cap):
                     frame = Img  # Show the detected faces
                 else:
                     frame = gray[y: y + h, x: x + w]
-                cv2.imwrite("dataSet/User." + str(ID) + "." + str(Count) + ".jpg", frame)
+                cv2.imwrite("../dataSet/User." + str(ID) + "." + str(Count) + ".jpg", frame)
                 cv2.waitKey(300)
                 cv2.imshow("CAPTURED PHOTO", frame)  # show the captured image
                 Count = Count + 1
-        cv2.putText(gray, "Photo restante a etre prise :" + str(Count) + "/50", (10, 10), cv2.FONT_HERSHEY_DUPLEX,
-                    .4,
+        cv2.putText(gray, "Photo restante a etre prise :" + str(Count) + "/50", (10, 10), cv2.FONT_HERSHEY_DUPLEX, .4,
                     WHITE)
-        cv2.putText(gray, "Appuyer sur \"q\" pour quitter le programme", (10, 30), cv2.FONT_HERSHEY_DUPLEX, .4,
-                    WHITE)
+        cv2.putText(gray, "Appuyer sur \"q\" pour quitter le programme", (10, 30), cv2.FONT_HERSHEY_DUPLEX, .4, WHITE)
         cv2.imshow('Système de reconnaissance des visages Capture des visages', gray)  # Show the video
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
@@ -50,4 +48,4 @@ def capture(cap):
 
 
 if __name__ == "__main__":
-    capture(cv2.VideoCapture(1))
+    capture(cv2.VideoCapture(0))
